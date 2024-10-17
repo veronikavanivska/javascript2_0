@@ -6,26 +6,35 @@
   const cw2 = document.getElementById('cw2')
   const cw3 = document.getElementById('cw3')
   const answer = document.getElementById('answer')
+  const loading = document.getElementById('loading');
+
+  const clearAnswer = () => {
+    answer.innerHTML = '';
+    answer.classList.remove('post-container'); // Remove styling class
+  };
 
   example.addEventListener("click", function () {
-    answer.innerHTML = '';
+    clearAnswer();
+    loading.style.display = 'block';
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(array => {
           console.log("All Posts:", array);
           answer.classList.add('post-container');
           answer.innerHTML = JSON.stringify(array);
-
         })
+        .finally(() => {
+          loading.style.display = 'none';
+        });
   })
 
   cw1.addEventListener("click", function () {
-    answer.innerHTML = '<p class = "loading">Loading...</p>'; //Show "Loading..." text
+    clearAnswer();
+    loading.style.display = 'block';
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(response => response.json())
         .then(posts => {
           console.log("Fetched Posts:", posts);
-          answer.innerHTML = ''; //Clear "loading" text
           posts.forEach(post => {
             const postElement = document.createElement('div');
             // Show JSON as HTML
@@ -40,10 +49,14 @@
             answer.appendChild(postElement);
           });
         })
+        .finally(() => {
+          loading.style.display = 'none';
+        });
   })
 
   //Button for the one post
   cw1_1.addEventListener("click", function () {
+    clearAnswer();
     fetch('https://jsonplaceholder.typicode.com/posts/1')
       .then(response => response.json())
         .then(post => {
@@ -63,6 +76,7 @@
   })
 
   cw1_2.addEventListener("click", function () {
+    clearAnswer();
     answer.innerHTML = '<p class="processing">Processing...</p>';
 
     const newPost = {
