@@ -1,4 +1,54 @@
-html {
-  height: 100%;
-  width: 100%;
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #070707;
+}
+
+h1 {
+  color: #333;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.post-container {
+  border: 1px solid #ffffff;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.processing{
+  font-weight: bold;
+  color: #19ff00;
+}
+
+/* Success message styling */
+.success {
+  color: #19ff00;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Aby był na wierzchu */
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
 }
