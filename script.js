@@ -4,7 +4,6 @@
   const cw1_1 = document.getElementById('cw1_1')
   const cw1_2 = document.getElementById('cw1_2')
   const cw2 = document.getElementById('cw2')
-  const cw3 = document.getElementById('cw3')
   const answer = document.getElementById('answer')
   const loading = document.getElementById('loading');
 
@@ -102,12 +101,43 @@
         });
   })
 
+  //CM3_1
   cw2.addEventListener("click", function () {
-    //TODO
-  })
+      clearAnswer();
+      loading.style.display = 'block';
 
-  cw3.addEventListener("click", function () {
-    //TODO
-  })
+      fetch('https://my-json-server.typicode.com/veronikavanivska/json/db')
+          .then(response => response.json())
+          .then(data => {
+              console.log("Fetched Data:", data);
+
+              const posts = data.posts;
+              const comments = data.comments;
+
+              posts.forEach(post => {
+                  const postElement = document.createElement('div');
+                  postElement.classList.add('post-container');
+                  postElement.innerHTML = `
+                        <h3 class="Post-id">Post ID: ${post.id}</h3>
+                        <h4 class="Title">${post.title}</h4>
+                        <p class="Post-body">${post.body}</p>
+                        <h5>Comments:</h5>
+                        <div class="comments-container">
+                            ${comments.filter(comment => comment.postId === post.id)
+                        .map(comment => `<p>${comment.body}</p>`).join('') || 'No comments'}
+                        </div>
+                        <hr/>
+                    `;
+                  answer.appendChild(postElement);
+              });
+          })
+          .catch(error => {
+              console.error('Error fetching posts:', error);
+              answer.innerHTML = '<p class="error">Error fetching posts. Please try again.</p>';
+          })
+          .finally(() => {
+              loading.style.display = 'none';
+          });
+  });
 
 })();
