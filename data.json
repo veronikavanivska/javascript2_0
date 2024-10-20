@@ -1,0 +1,194 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "tasks": [
+        {
+          "task_id": 101,
+          "title": "Finish report",
+          "status": "completed",
+          "due_date": "2024-10-25"
+        },
+        {
+          "task_id": 102,
+          "title": "Attend team meeting",
+          "status": "pending",
+          "due_date": "2024-10-27"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "tasks": [
+        {
+          "task_id": 103,
+          "title": "Fix bug #234",
+          "status": "in-progress",
+          "due_date": "2024-10-22"
+        },
+        {
+          "task_id": 104,
+          "title": "Code review",
+          "status": "completed",
+          "due_date": "2024-10-20"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Catherine Lee",
+      "email": "catherine.lee@example.com",
+      "tasks": [
+        {
+          "task_id": 105,
+          "title": "Prepare presentation",
+          "status": "in-progress",
+          "due_date": "2024-10-29"
+        },
+        {
+          "task_id": 106,
+          "title": "Research on new tech",
+          "status": "pending",
+          "due_date": "2024-11-02"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "David Brown",
+      "email": "david.brown@example.com",
+      "tasks": [
+        {
+          "task_id": 107,
+          "title": "Update documentation",
+          "status": "pending",
+          "due_date": "2024-10-26"
+        },
+        {
+          "task_id": 108,
+          "title": "Team feedback session",
+          "status": "completed",
+          "due_date": "2024-10-15"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Ella Martinez",
+      "email": "ella.martinez@example.com",
+      "tasks": [
+        {
+          "task_id": 109,
+          "title": "Client follow-up",
+          "status": "in-progress",
+          "due_date": "2024-10-24"
+        },
+        {
+          "task_id": 110,
+          "title": "Budget planning",
+          "status": "completed",
+          "due_date": "2024-10-10"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Frank Wilson",
+      "email": "frank.wilson@example.com",
+      "tasks": [
+        {
+          "task_id": 111,
+          "title": "System architecture review",
+          "status": "pending",
+          "due_date": "2024-10-30"
+        },
+        {
+          "task_id": 112,
+          "title": "Onboard new hires",
+          "status": "in-progress",
+          "due_date": "2024-10-28"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Grace Green",
+      "email": "grace.green@example.com",
+      "tasks": [
+        {
+          "task_id": 113,
+          "title": "Design UX wireframes",
+          "status": "completed",
+          "due_date": "2024-10-18"
+        },
+        {
+          "task_id": 114,
+          "title": "Update project plan",
+          "status": "pending",
+          "due_date": "2024-11-01"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Henry Young",
+      "email": "henry.young@example.com",
+      "tasks": [
+        {
+          "task_id": 115,
+          "title": "Finalize contract",
+          "status": "completed",
+          "due_date": "2024-10-16"
+        },
+        {
+          "task_id": 116,
+          "title": "Quarterly review",
+          "status": "in-progress",
+          "due_date": "2024-10-31"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Ivy King",
+      "email": "ivy.king@example.com",
+      "tasks": [
+        {
+          "task_id": 117,
+          "title": "Marketing strategy review",
+          "status": "pending",
+          "due_date": "2024-11-05"
+        },
+        {
+          "task_id": 118,
+          "title": "Website redesign",
+          "status": "in-progress",
+          "due_date": "2024-10-29"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Jack White",
+      "email": "jack.white@example.com",
+      "tasks": [
+        {
+          "task_id": 119,
+          "title": "Customer survey analysis",
+          "status": "completed",
+          "due_date": "2024-10-17"
+        },
+        {
+          "task_id": 120,
+          "title": "Develop new feature",
+          "status": "in-progress",
+          "due_date": "2024-11-03"
+        }
+      ]
+    }
+  ]
+}
