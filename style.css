@@ -9,6 +9,7 @@ html {
   gap: 15px;
 }
 
+
 .post {
   border: 1px solid #ccc;
   padding: 15px;
@@ -66,3 +67,52 @@ html {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+/* Stylizacja przycisków */
+button {
+  margin: 10px;
+  padding: 10px 20px; /* Padding (wewnętrzne odstępy) */
+  font-size: 16px;    /* Rozmiar czcionki */
+  color: white;       /* Kolor tekstu */
+  background-color: #3b444a; /* Kolor tła */
+  border: none;       /* Brak obramowania */
+  border-radius: 5px; /* Zaokrąglenie rogów */
+  cursor: pointer;    /* Kursor wskazujący na interaktywność */
+  transition: background-color 0.3s; /* Animacja zmiany koloru tła */
+}
+
+
+
+
+
+
+
+
+/* Stylizacja przycisku po najechaniu */
+button:hover {
+  background-color: #12273c; /* Ciemniejszy kolor tła po najechaniu */
+}
+
+/* Stylizacja dla przycisków o określonych ID */
+#example {
+  width: 120px; /* Szerokość przycisku */
+}
+
+#cw1, #cw2, #cw3 {
+  width: 200px; /* Szerokość pozostałych przycisków */
+  margin: 10px; /* Odstęp między przyciskami */
+}
+
+
+
+
+
+
+
+div2 {
+  background-color: #cccccc;
+  width: 820px;
+  border: 60px solid #cccccc;
+}
+
