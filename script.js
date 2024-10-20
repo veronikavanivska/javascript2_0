@@ -4,6 +4,8 @@
     const cw2 = document.getElementById('cw2');
     const cw3 = document.getElementById('cw3');
     const answer = document.getElementById('answer');
+    const loadingModal = document.getElementById('loadingModal');
+    const closeModal = document.querySelector('.close');
 
     // Przykład wywołania z konsolą
     example.addEventListener("click", function () {
@@ -105,12 +107,59 @@
             });
     });
 
+    // Funkcjonalność dla cw2
     cw2.addEventListener("click", function () {
-        // Możesz dodać funkcjonalność dla cw2 tutaj
+        // Wyświetlanie modalnego okna "Loading"
+        loadingModal.style.display = "block";
+
+        // Pobieranie wszystkich postów
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(posts => {
+                console.log('Wszystkie posty:', posts); // Wyświetlenie wszystkich postów w konsoli
+                let postsHTML = '<h3>All Posts Styled:</h3><div class="post-container">';
+
+                posts.forEach(post => {
+                    // Wyświetlanie postów z dodatkowymi stylami
+                    postsHTML += `
+                <div class="post">
+                    <strong>User ID:</strong> ${post.userId}<br>
+                    <strong>Post ID:</strong> ${post.id}<br>
+                    <strong>Title:</strong> <span class="post-title">${post.title}</span><br>
+                    <strong>Body:</strong> <p class="post-body">${post.body}</p>
+                </div>`;
+                });
+
+                postsHTML += '</div>';
+                // Po załadowaniu danych, zastępujemy tekst "Loading..." treścią postów
+                answer.innerHTML = postsHTML;
+
+                // Ukrywanie modalnego okna "Loading"
+                loadingModal.style.display = "none";
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                answer.innerHTML = '<p class="error-message">Wystąpił błąd podczas pobierania danych.</p>';
+
+                // Ukrywanie modalnego okna "Loading"
+                loadingModal.style.display = "none";
+            });
     });
 
     cw3.addEventListener("click", function () {
         // Możesz dodać funkcjonalność dla cw3 tutaj
     });
+
+    // Zamknięcie modalnego okna po kliknięciu na krzyżyk
+    closeModal.onclick = function() {
+        loadingModal.style.display = "none";
+    }
+
+    // Zamknięcie modalnego okna po kliknięciu gdziekolwiek na oknie
+    window.onclick = function(event) {
+        if (event.target == loadingModal) {
+            loadingModal.style.display = "none";
+        }
+    }
 
 })();

@@ -2,3 +2,67 @@ html {
   height: 100%;
   width: 100%;
 }
+
+.post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.post-title {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.post-body {
+  color: #34495e;
+}
+
+.error-message {
+  color: red;
+}
+
+/* Style dla modalnego okna Loading */
+.modal {
+  display: none; /* Ukryj modal domyślnie */
+  position: fixed;
+  z-index: 1; /* Na wierzchu */
+  left: 0;
+  top: 0;
+  width: 100%; /* Pełna szerokość */
+  height: 100%; /* Pełna wysokość */
+  overflow: auto; /* Włącz przewijanie, jeśli potrzeba */
+  background-color: rgb(0,0,0); /* Kolor tła */
+  background-color: rgba(0,0,0,0.4); /* Czarne z przezroczystością */
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% z góry, 15% z dołu */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Szerokość */
+  text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

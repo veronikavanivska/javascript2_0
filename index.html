@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>repl.it</title>
-  </head>
-  <body>
-    <div>
-      <button id="example">example</button>
-      <button id="cw1">cw1</button>
-      <button id="cw2">cw2</button>
-      <button id="cw3">cw3</button>
-    </div>
-    <div id="answer">
-    </div>
-    <script src="script.js"></script>
-  </body>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Wyświetlanie Postów</title>
+  <link rel="stylesheet" href="style.css"> <!-- Dodanie linku do pliku CSS -->
+</head>
+<body>
+<div>
+  <button id="example">Przykład</button>
+  <button id="cw1">Cw1 - Pojedyńcze/lista postów</button>
+  <button id="cw2">Cw2 - stylizowane posty</button>
+  <button id="cw3">Cw3</button>
+</div>
+<div id="answer"></div>
+
+<!-- Wyskakujące okno modalne dla "Loading" -->
+<div id="loadingModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
 </html>
