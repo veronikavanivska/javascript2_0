@@ -147,19 +147,53 @@
     });
 
     cw3.addEventListener("click", function () {
-        // Możesz dodać funkcjonalność dla cw3 tutaj
+        // Показать окно "Loading", пока загружаются данные
+        loadingModal.style.display = "block";
+
+        // Загрузка данных из JSON файла на GitHub
+        fetch('https://raw.githubusercontent.com/veronikavanivska/javascript2_0/refs/heads/mikolay/data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Скрыть окно "Loading"
+                loadingModal.style.display = "none";
+
+                // Формируем HTML для отображения данных пользователей и задач
+                let usersHTML = '<h3>Users and their Tasks:</h3><ul>';
+
+                data.users.forEach(user => {
+                    // Формируем HTML для каждого пользователя
+                    usersHTML += `
+                <li>
+                    <strong>Name:</strong> ${user.name}<br>
+                    <strong>Email:</strong> ${user.email}<br>
+                    <strong>Tasks:</strong>
+                    <ul>`;
+
+                    // Выводим список задач для каждого пользователя
+                    user.tasks.forEach(task => {
+                        usersHTML += `
+                    <li>
+                        <strong>Task ID:</strong> ${task.task_id}<br>
+                        <strong>Title:</strong> ${task.title}<br>
+                        <strong>Status:</strong> ${task.status}<br>
+                        <strong>Due Date:</strong> ${task.due_date}
+                    </li>`;
+                    });
+
+                    usersHTML += `</ul><br></li>`;
+                });
+
+                usersHTML += '</ul>';
+                // Отображаем результат на странице
+                answer.innerHTML = usersHTML;
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+                answer.innerHTML = 'Error fetching data from GitHub JSON file.';
+                loadingModal.style.display = "none";
+            });
     });
 
-    // Zamknięcie modalnego okna po kliknięciu na krzyżyk
-    closeModal.onclick = function() {
-        loadingModal.style.display = "none";
-    }
 
-    // Zamknięcie modalnego okna po kliknięciu gdziekolwiek na oknie
-    window.onclick = function(event) {
-        if (event.target == loadingModal) {
-            loadingModal.style.display = "none";
-        }
-    }
 
 })();
